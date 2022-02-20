@@ -6,7 +6,7 @@ import (
 	"tool/file"
 )
 
-version:      "v0.2.0"
+version:      "v0.2.1"
 manifest_url: "https://github.com/phoban01/cue-flux-controller/releases/download/\(version)"
 flux_path:    "./examples/podinfo-yaml/cluster/"
 
