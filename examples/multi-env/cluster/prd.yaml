@@ -1,0 +1,17 @@
+apiVersion: cue.contrib.flux.io/v1alpha1
+kind: CueInstance
+metadata:
+  name: prd
+  namespace: flux-system
+spec:
+  interval: 10m
+  root: "./examples/multi-env"
+  path: "./infra/prd"
+  expressions:
+  - out
+  tags:
+  - name: prd
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system

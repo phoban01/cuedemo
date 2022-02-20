@@ -1,0 +1,16 @@
+apiVersion: cue.contrib.flux.io/v1alpha1
+kind: CueInstance
+metadata:
+  name: podinfo
+  namespace: flux-system
+spec:
+  interval: 10m
+  root: "./examples/podinfo"
+  expressions:
+  - out
+  tags:
+  - name: hpa
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system

@@ -1,0 +1,18 @@
+apiVersion: cue.contrib.flux.io/v1alpha1
+kind: CueInstance
+metadata:
+  name: services
+  namespace: flux-system
+spec:
+  interval: 10m
+  root: "./examples/podinfo-yaml"
+  path: "./services"
+  package: main
+  validate:
+    type: yaml
+    mode: Audit
+    schema: "#KRM"
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
